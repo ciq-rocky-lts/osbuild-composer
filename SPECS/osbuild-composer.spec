@@ -25,7 +25,7 @@ It is compatible with composer-cli and cockpit-composer clients.
 }
 
 Name:                 osbuild-composer
-Release:              2%{?dist}.rocky.0.6
+Release:              2.2%{?dist}.rocky.0.6
 Summary:              An image building service based on osbuild
 
 # osbuild-composer doesn't have support for building i686 and armv7hl images
@@ -432,6 +432,12 @@ Integration tests to be run on a pristine-dedicated system to test the osbuild-c
 %endif
 
 %changelog
+* Wed Nov 18 2026 Jason Rodriguez <jrodriguez@ciq.com> - 101-2.2.rocky.0.6
+- Rebuild against golang 1.25.14 (toolchain CVE; no source change)
+
+* Fri Jun 26 2026 Jason Rodriguez <jrodriguez@ciq.com> - 101-2.1.rocky.0.6
+- Rebuild against golang 1.25.9 to remediate CVE-2025-61726 and CVE-2026-25679 (Go net/url stdlib, statically linked into the binaries)
+
 * Thu Sep 26 2024 Release Engineering <releng@rockylinux.org> - 101-2.rocky.0.6
 - Add Rocky Linux support and host detection
 
